@@ -51,15 +51,15 @@ public class CollectionTestSuite {
         OddNumbersExterminator exterminatorTest = new OddNumbersExterminator();
 
         // When
-        ArrayList <Integer> newArrayListForClassOddNumbersExterminator = new ArrayList<>();
+        ArrayList <Integer> testExterminator = new ArrayList<>();
 
         // initialization ArrayList for test
 
-        newArrayListForClassOddNumbersExterminator.add(2);
-        newArrayListForClassOddNumbersExterminator.add(1);
-        newArrayListForClassOddNumbersExterminator.add(3);
-        newArrayListForClassOddNumbersExterminator.add(4);
-        newArrayListForClassOddNumbersExterminator.add(5);
+        testExterminator.add(2);
+        testExterminator.add(1);
+        testExterminator.add(3);
+        testExterminator.add(4);
+        testExterminator.add(5);
 
 
         // New Array List for checking result of Test
@@ -68,11 +68,11 @@ public class CollectionTestSuite {
 
         // Checking if return result is OK
 
-        results = exterminatorTest.exterminate(newArrayListForClassOddNumbersExterminator);
+        results = exterminatorTest.exterminate(testExterminator);
 
 
         // Then
-        Assert.assertEquals(exterminatorTest.exterminate(newArrayListForClassOddNumbersExterminator), results);
+        Assert.assertEquals(exterminatorTest.exterminate(testExterminator), results);
 
     }
 }

@@ -34,6 +34,7 @@ public class TestingMain {
         }
 
 
+
         OddNumbersExterminator numbTempForTest = new OddNumbersExterminator();
         ArrayList<Integer> tempNumbers = new ArrayList<>();
 
@@ -47,6 +48,7 @@ public class TestingMain {
 
 
         System.out.println(numbTempForTest.exterminate(tempNumbers));
+
 
 
 

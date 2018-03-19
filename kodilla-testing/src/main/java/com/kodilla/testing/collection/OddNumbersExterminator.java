@@ -10,21 +10,21 @@ public class OddNumbersExterminator {
 
         ArrayList<Integer> evenNumbers = new ArrayList<>();
 
-        for (int i = 0; i < numbers.size(); i++){
-            if (numbers.get(i)%2 == 0){
-                Integer temp = 0;
+        for (Integer  index: numbers) {
+            if ( index % 2 == 0){
 
-               temp = numbers.get(i);
-               evenNumbers.add(temp);
+                evenNumbers.add(numbers.get(index));
 
             }
         }
         return evenNumbers;
-    }
-
-
+        }
 
     }
+
+
+
+
 
 
 
