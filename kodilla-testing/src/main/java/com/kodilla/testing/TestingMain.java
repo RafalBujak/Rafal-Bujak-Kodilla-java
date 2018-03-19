@@ -1,20 +1,14 @@
 package com.kodilla.testing;
 
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import com.kodilla.testing.user.SimplerUser;
 import com.kodilla.testing.calculator.Calculator;
+
+import java.util.ArrayList;
 
 public class TestingMain {
 
     public static void main(String[] args) {
-       SimplerUser simpleUser = new SimplerUser("The User");
-
-       String result = simpleUser.getUserName();
-
-       if (result.equals("The User")) {
-           System.out.println("Test OK");
-       } else {
-           System.out.println("Error");
-       }
 
        // New unit test for class Calculator
 
@@ -38,6 +32,24 @@ public class TestingMain {
         } else {
             System.out.println("Test was not OK fo subtract");
         }
+
+
+        OddNumbersExterminator numbTempForTest = new OddNumbersExterminator();
+        ArrayList<Integer> tempNumbers = new ArrayList<>();
+
+        tempNumbers.add(2);
+        tempNumbers.add(4);
+        tempNumbers.add(3);
+        tempNumbers.add(5);
+        tempNumbers.add(8);
+        tempNumbers.add(1);
+
+
+
+        System.out.println(numbTempForTest.exterminate(tempNumbers));
+
+
+
 
     }
 }
