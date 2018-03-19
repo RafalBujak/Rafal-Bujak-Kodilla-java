@@ -33,24 +33,23 @@ public class TestingMain {
             System.out.println("Test was not OK fo subtract");
         }
 
+        OddNumbersExterminator exterminatorTest = new OddNumbersExterminator();
 
+           ArrayList <Integer> testExterminator = new ArrayList<>();
 
-        OddNumbersExterminator numbTempForTest = new OddNumbersExterminator();
-        ArrayList<Integer> tempNumbers = new ArrayList<>();
+        // initialization ArrayList for test
 
-        tempNumbers.add(2);
-        tempNumbers.add(4);
-        tempNumbers.add(3);
-        tempNumbers.add(5);
-        tempNumbers.add(8);
-        tempNumbers.add(1);
-
-
-
-        System.out.println(numbTempForTest.exterminate(tempNumbers));
+        testExterminator.add(2);
+        testExterminator.add(3);
+        testExterminator.add(3);
+        testExterminator.add(4);
+        testExterminator.add(7);
+        testExterminator.add(9);
+        testExterminator.add(48);
 
 
 
+        System.out.println(exterminatorTest.exterminate(testExterminator));
 
 
     }

@@ -1,9 +1,6 @@
 package com.kodilla.testing.collection;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
+import org.junit.*;
 
 import java.util.ArrayList;
 
@@ -52,6 +49,8 @@ public class CollectionTestSuite {
 
         // When
         ArrayList <Integer> testExterminator = new ArrayList<>();
+        ArrayList <Integer> tempArray = new ArrayList<>();
+        ArrayList <Integer> results = new ArrayList<>();
 
         // initialization ArrayList for test
 
@@ -60,18 +59,30 @@ public class CollectionTestSuite {
         testExterminator.add(3);
         testExterminator.add(4);
         testExterminator.add(5);
+        testExterminator.add(4);
+        testExterminator.add(5);
+        testExterminator.add(9);
 
 
+        for (int i = 0; i < testExterminator.size(); i++){
+
+            if (testExterminator.get(i) % 2 == 0){
+                int temp;
+                temp = testExterminator.get(i);
+                tempArray.add(temp);
+            }
+        }
         // New Array List for checking result of Test
 
-        ArrayList <Integer> results = new ArrayList<>();
+
 
         // Checking if return result is OK
 
-        results = exterminatorTest.exterminate(testExterminator);
+        results = exterminatorTest.exterminate(tempArray);
 
 
         // Then
+
         Assert.assertEquals(exterminatorTest.exterminate(testExterminator), results);
 
     }
