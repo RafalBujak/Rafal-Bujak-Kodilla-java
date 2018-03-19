@@ -45,7 +45,15 @@ public class TestingMain {
         testExterminator.add(4);
         testExterminator.add(7);
         testExterminator.add(9);
+        testExterminator.add(1);
+        testExterminator.add(2);
+        testExterminator.add(4);
+        testExterminator.add(15);
+        testExterminator.add(38);
+        testExterminator.add(59);
         testExterminator.add(48);
+
+
 
 
 
