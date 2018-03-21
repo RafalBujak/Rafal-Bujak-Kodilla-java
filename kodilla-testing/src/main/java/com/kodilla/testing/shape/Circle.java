@@ -5,7 +5,7 @@ public class Circle implements Shape{
     String name;
     double field;
 
-    Circle (String name, double field){
+   public Circle (String name, double field){
         this.name = name;
         this.field = field;
     }

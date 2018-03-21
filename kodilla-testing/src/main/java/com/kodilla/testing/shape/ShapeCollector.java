@@ -11,26 +11,30 @@ public class ShapeCollector {
         this.shape = shape;
     }
 
-    ArrayList<String> figure = new ArrayList<>();
+    ArrayList<Shape> figure = new ArrayList<>();
 
-   public ArrayList<String> addFigure(Shape shape) {
-    figure.add(shape.toString());
+   public ArrayList<Shape> addFigure(Shape shape) {
+    figure.add(shape);
     return figure;
     }
 
-    List<String> removeFigure(Shape shape){
-        figure.remove(shape.toString());
+    List<Shape> removeFigure(Shape shape){
+        figure.remove(shape);
         return figure;
     }
 
-    String getFigure(int n){
-        String temp;
-               temp = figure.get(n);
-        return temp;
+    Shape getFigure(int n){
+
+             shape = figure.get(n);
+        return shape;
     }
 
-    String showFigures() {
-        return null;
+    public void showFigures() {
+
+
+            System.out.println(figure);
+
+
     }
 
 }

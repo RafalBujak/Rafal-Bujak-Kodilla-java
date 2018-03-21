@@ -2,6 +2,8 @@ package com.kodilla.testing;
 
 import com.kodilla.testing.collection.OddNumbersExterminator;
 
+import com.kodilla.testing.shape.Circle;
+import com.kodilla.testing.shape.ShapeCollector;
 import com.kodilla.testing.user.SimplerUser;
 import com.kodilla.testing.calculator.Calculator;
 
@@ -61,7 +63,6 @@ public class TestingMain {
 
 
         System.out.println(exterminatorTest.exterminate(testExterminator));
-
 
     }
 

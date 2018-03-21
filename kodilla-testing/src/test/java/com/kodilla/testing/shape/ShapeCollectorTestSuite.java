@@ -16,22 +16,22 @@ public class ShapeCollectorTestSuite {
 
 
         Triangle triangle = new Triangle("triangle 1", 16);
-        Triangle triangle1 = new Triangle ("nazwa1", 123);
+       Triangle triangle1 = new Triangle ("nazwa1", 123);
         Triangle triangle2 = new Triangle ("nazwa2", 234);
 
         test.addFigure(triangle);
-        test.addFigure(triangle1);
+       test.addFigure(triangle1);
         test.addFigure(triangle2);
 
 
 
-        ArrayList<String> forTesting = new ArrayList<>();
-        forTesting.add(triangle.toString());
-        forTesting.add(triangle1.toString());
-        forTesting.add(triangle2.toString());
+        ArrayList<Shape> forTesting = new ArrayList<>();
+        forTesting.add(triangle);
+       forTesting.add(triangle1);
+        forTesting.add(triangle2);
 
        Assert.assertEquals(forTesting.get(0), test.getFigure(0));
-       System.out.println(test.getFigure(2));
+       //System.out.println(test.getFigure(2));
     }
 
     @Test
@@ -51,14 +51,11 @@ public class ShapeCollectorTestSuite {
 
     @Test
     public void testGetFigure() {
-        test.getFigure(0);
-        Assert.assertEquals(new Circle("new Circle", 12), test.getFigure(0));
+        Triangle triangle1 = new Triangle ("nazwa1", 123);
+        test.addFigure(triangle1);
+
+        Assert.assertEquals(triangle1, test.getFigure(0));
     }
 
-    @Test
-    public void testShowFigures(){
-        test.showFigures();
-        Assert.assertEquals(new Circle("new Circle", 12), test.showFigures());
-    }
 
 }
