@@ -62,6 +62,7 @@ public class CollectionTestSuite {
         testExterminator.add(4);
         testExterminator.add(5);
         testExterminator.add(9);
+        testExterminator.add(48);
 
 
         for (int i = 0; i < testExterminator.size(); i++){

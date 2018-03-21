@@ -1,8 +1,10 @@
 package com.kodilla.testing;
 
 import com.kodilla.testing.collection.OddNumbersExterminator;
+
 import com.kodilla.testing.user.SimplerUser;
 import com.kodilla.testing.calculator.Calculator;
+
 
 import java.util.ArrayList;
 
@@ -52,6 +54,7 @@ public class TestingMain {
         testExterminator.add(38);
         testExterminator.add(59);
         testExterminator.add(48);
+        testExterminator.add(2);
 
 
 
@@ -61,4 +64,5 @@ public class TestingMain {
 
 
     }
+
 }
