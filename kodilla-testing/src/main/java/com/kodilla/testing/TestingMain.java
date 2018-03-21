@@ -2,6 +2,7 @@ package com.kodilla.testing;
 
 import com.kodilla.testing.collection.OddNumbersExterminator;
 
+import com.kodilla.testing.forum.statistics.StatisticsCounter;
 import com.kodilla.testing.shape.Circle;
 import com.kodilla.testing.shape.ShapeCollector;
 import com.kodilla.testing.user.SimplerUser;
@@ -64,6 +65,9 @@ public class TestingMain {
 
         System.out.println(exterminatorTest.exterminate(testExterminator));
 
+
+        StatisticsCounter counter = new StatisticsCounter(null);
+        counter.showStatistics();
     }
 
 }

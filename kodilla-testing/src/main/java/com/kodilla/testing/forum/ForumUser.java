@@ -7,10 +7,10 @@ public class ForumUser {
 
     private String name;
     private String realName;
-    private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
-    private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
+    public ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
+    public LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
 
-    public ForumUser(String name, String realName){
+    public ForumUser(String name, String realName) {
 
         // name visible on forum
         this.name = name;
@@ -24,12 +24,12 @@ public class ForumUser {
         posts.add(thePost);
     }
 
-    public void addComment(ForumPost thePost, String author, String commentBody){
+    public void addComment(ForumPost thePost, String author, String commentBody) {
         ForumComment theComment = new ForumComment(thePost, commentBody, author);
         comments.add(theComment);
     }
 
-    public int getCommentsQuantity(){
+    public int getCommentsQuantity() {
         // return 100 temporarily
         return comments.size();
     }
@@ -38,9 +38,9 @@ public class ForumUser {
         return posts.size();
     }
 
-    public ForumComment getComment( int commentNumber) {
+    public ForumComment getComment(int commentNumber) {
         ForumComment theComment = null;
-        if (commentNumber >=0 && commentNumber < comments.size()) {
+        if (commentNumber >= 0 && commentNumber < comments.size()) {
             theComment = comments.get(commentNumber);
         }
         return theComment;
@@ -56,7 +56,7 @@ public class ForumUser {
 
     public boolean removePost(ForumPost thePost) {
         boolean result = false;
-        if (posts.contains(thePost)){
+        if (posts.contains(thePost)) {
             posts.remove(thePost);
             result = true;
         }
@@ -65,7 +65,7 @@ public class ForumUser {
 
     public boolean removeComment(ForumComment theComment) {
         boolean result = false;
-        if (comments.contains(theComment)){
+        if (comments.contains(theComment)) {
             comments.remove(theComment);
             result = true;
         }
@@ -73,7 +73,7 @@ public class ForumUser {
     }
 
     public String getName() {
-        return  name;
+        return name;
     }
 
     public String getRealName() {

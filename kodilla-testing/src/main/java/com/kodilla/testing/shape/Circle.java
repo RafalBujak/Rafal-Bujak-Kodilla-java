@@ -1,14 +1,15 @@
 package com.kodilla.testing.shape;
 
-public class Circle implements Shape{
+public class Circle implements Shape {
 
     String name;
     double field;
 
-   public Circle (String name, double field){
+    public Circle(String name, double field) {
         this.name = name;
         this.field = field;
     }
+
     @Override
     public String getShapeName() {
         return name;
@@ -21,11 +22,12 @@ public class Circle implements Shape{
         return field;
     }
 
-    public double getField1(){
+    public double getField1() {
         return field;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return getShapeName() + " " + getField1();
     }
 }

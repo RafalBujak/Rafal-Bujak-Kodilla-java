@@ -5,7 +5,7 @@ public class ForumComment {
     String commentBody;
     String author;
 
-    public ForumComment(ForumPost forumPost, String commentBody, String  author) {
+    public ForumComment(ForumPost forumPost, String commentBody, String author) {
         this.forumPost = forumPost;
         this.commentBody = commentBody;
         this.author = author;
@@ -33,7 +33,7 @@ public class ForumComment {
 
         ForumComment that = (ForumComment) obj;
 
-        if (!forumPost.equals(that.forumPost)) return  false;
+        if (!forumPost.equals(that.forumPost)) return false;
         if (!commentBody.equals(that.commentBody)) return false;
         return author.equals(that.author);
     }

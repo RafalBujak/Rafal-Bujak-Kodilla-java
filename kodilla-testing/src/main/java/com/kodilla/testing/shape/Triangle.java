@@ -5,7 +5,7 @@ public class Triangle implements Shape {
     String name;
     double field;
 
-    Triangle (String name, double field){
+    Triangle(String name, double field) {
         this.name = name;
         this.field = field;
     }
@@ -23,11 +23,11 @@ public class Triangle implements Shape {
     }
 
     //public double getField1() {
-       //return field;
-   // }
+    //return field;
+    // }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getShapeName() + " " + getField(field);
     }
 }
