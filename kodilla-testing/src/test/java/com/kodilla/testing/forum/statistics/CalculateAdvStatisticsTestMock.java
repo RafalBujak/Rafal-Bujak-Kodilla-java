@@ -42,13 +42,13 @@ public class CalculateAdvStatisticsTestMock {
         addPost.addPost("Smith", "First post");
 
 
-        when(statisticsMock.postsCount()).thenReturn(addPost.posts.size());
+        when(statisticsMock.postsCount()).thenReturn(1);
 
 
         addPost.addComment(new ForumPost("nnn", "Smith"),
                 "nnn", "Smith");
 
-        when(statisticsMock.commontsCount()).thenReturn(addPost.comments.size());
+        when(statisticsMock.commontsCount()).thenReturn(1);
 
         statisticsCounter.averageOfPostorUser();
 
