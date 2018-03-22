@@ -8,7 +8,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 public class CalculateAdvStatisticsTestMock {
@@ -47,6 +49,12 @@ public class CalculateAdvStatisticsTestMock {
                 "nnn", "Smith");
 
         when(statisticsMock.commontsCount()).thenReturn(addPost.comments.size());
+
+        statisticsCounter.averageOfPostorUser();
+
+        statisticsCounter.getAvarageOfCommentsForPost();
+
+        statisticsCounter.getAvarageOfCommentsForUser();
         //when
 
         statisticsCounter.numbersOfUser = statisticsMock.userName().size();
@@ -55,13 +63,15 @@ public class CalculateAdvStatisticsTestMock {
 
         statisticsCounter.numbersOfComments = statisticsMock.commontsCount();
 
-
+        statisticsCounter.avarageOfPostsForUser = statisticsCounter.averageOfPostorUser();
 
         // Then
-        Assert.assertEquals(4, statisticsCounter.numbersOfUser);
-        Assert.assertEquals(1, statisticsCounter.numberOfPosts);
-        Assert.assertEquals(1, statisticsCounter.numbersOfComments);
-
+        assertEquals(4, statisticsCounter.numbersOfUser);
+        assertEquals(1, statisticsCounter.numberOfPosts);
+        assertEquals(1, statisticsCounter.numbersOfComments);
+       assertEquals(1,statisticsCounter.avarageOfCommentsForPost, 0 );
+       assertEquals(0.0, statisticsCounter.avarageOfPostsForUser,0);
+       assertEquals(0.0, statisticsCounter.avarageOfCommentsForUser, 0 );
     }
 
 }
