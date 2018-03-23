@@ -11,10 +11,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public String getShapeName() {
-
-        return name;
-    }
+    public String getShapeName() {return name;}
 
     @Override
     public double getField(double n) {

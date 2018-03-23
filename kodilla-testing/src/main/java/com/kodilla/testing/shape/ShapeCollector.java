@@ -24,17 +24,10 @@ public class ShapeCollector {
     }
 
     Shape getFigure(int n) {
-
         shape = figure.get(n);
         return shape;
     }
 
-    public void showFigures() {
-
-
-        System.out.println(figure);
-
-
-    }
+    public void showFigures() {System.out.println(figure);}
 
 }

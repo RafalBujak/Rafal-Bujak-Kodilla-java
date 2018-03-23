@@ -11,9 +11,6 @@ import org.mockito.Mockito;
 import java.util.List;
 import java.util.ArrayList;
 
-import static org.mockito.Matchers.anyCollection;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.isNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -22,7 +19,7 @@ public class BookDirectoryTestSuite {
     LibraryUser user = new LibraryUser(null, null, null);
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
-        List<Book> resultList = new ArrayList<Book>();
+        List<Book> resultList = new ArrayList<>();
         for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
@@ -133,7 +130,7 @@ public class BookDirectoryTestSuite {
         List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(user);
 
         // Then
-        Assert.assertEquals(0, theListOfBooks1.size());
+        Assert.assertEquals(1, theListOfBooks1.size());
 
     }
 
@@ -151,7 +148,7 @@ public class BookDirectoryTestSuite {
         List<Book> theListOfBooks15 = bookLibrary.listBooksInHandsOf(user);
 
         // Then
-        Assert.assertEquals(0, theListOfBooks15.size());
+        Assert.assertEquals(15, theListOfBooks15.size());
     }
 
 }

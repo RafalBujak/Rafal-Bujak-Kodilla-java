@@ -14,22 +14,19 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    // On this moment i don't use this methods, but I need them lather
+    /*
+    public String getTitle() {return title;}
 
-    public String getAuthor() {
-        return author;
-    }
+    public String getAuthor() {return author;}
 
-    public int getPublicationYear() {
-        return publicationYear;
-    }
+    public int getPublicationYear() {return publicationYear;}
+    */
 
     @Override
     public String toString() {
         return "Book{" +
-                "title='" + title + '\'' + ", author ='" + author +'\'' +
+                "title='" + title + '\'' + ", author ='" + author + '\'' +
                 ", publicationYear = " + publicationYear +
                 '}';
     }

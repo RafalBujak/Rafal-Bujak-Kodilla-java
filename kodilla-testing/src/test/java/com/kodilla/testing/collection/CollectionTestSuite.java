@@ -11,6 +11,7 @@ public class CollectionTestSuite {
     public static void beforeClass() {
         System.out.println("Test Suite: begin");
     }
+
     @AfterClass
     public static void afterClass() {
         System.out.println("Test Suite: end");
@@ -18,7 +19,7 @@ public class CollectionTestSuite {
 
     @Test
 
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
          /*
         check if the class behaves correctly when the list is empty
          */
@@ -26,8 +27,8 @@ public class CollectionTestSuite {
         // Given
         OddNumbersExterminator exterminatorTest = new OddNumbersExterminator();
         // When
-        ArrayList <Integer> newArrayListForClassOddNumbersExterminator = new ArrayList<>();
-        ArrayList <Integer> results = new ArrayList<>();
+        ArrayList<Integer> newArrayListForClassOddNumbersExterminator = new ArrayList<>();
+        ArrayList<Integer> results = new ArrayList<>();
         // Then
         Assert.assertEquals(exterminatorTest.exterminate(newArrayListForClassOddNumbersExterminator), results);
 
@@ -36,21 +37,15 @@ public class CollectionTestSuite {
 
     @Test
 
-    public void testOddNumbersExterminatorNormalList(){
-
-
-         /*
-        check if the class behaves correctly when the list contains even and odd numbers
-         */
-
+    public void testOddNumbersExterminatorNormalList() {
 
         // Given
         OddNumbersExterminator exterminatorTest = new OddNumbersExterminator();
 
         // When
-        ArrayList <Integer> testExterminator = new ArrayList<>();
-        ArrayList <Integer> tempArray = new ArrayList<>();
-        ArrayList <Integer> results = new ArrayList<>();
+        ArrayList<Integer> testExterminator = new ArrayList<>();
+        ArrayList<Integer> tempArray = new ArrayList<>();
+        ArrayList<Integer> results = new ArrayList<>();
 
         // initialization ArrayList for test
 
@@ -65,17 +60,14 @@ public class CollectionTestSuite {
         testExterminator.add(48);
 
 
-        for (int i = 0; i < testExterminator.size(); i++){
+        for (int i = 0; i < testExterminator.size(); i++) {
 
-            if (testExterminator.get(i) % 2 == 0){
+            if (testExterminator.get(i) % 2 == 0) {
                 int temp;
                 temp = testExterminator.get(i);
                 tempArray.add(temp);
             }
         }
-        // New Array List for checking result of Test
-
-
 
         // Checking if return result is OK
 
