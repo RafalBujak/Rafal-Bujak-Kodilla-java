@@ -1,7 +1,6 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.ExtraCharsForMakeBeautyfier;
 
 
 public class StreamMain {
@@ -10,11 +9,10 @@ public class StreamMain {
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        // Expression with method reference
         poemBeautifier.beautify("New text to checking", String::toUpperCase);
-        poemBeautifier.beautify("Up and Down", ExtraCharsForMakeBeautyfier::beauteText);
+        poemBeautifier.beautify("Up and Down", (text)-> {return "# @ ~~~~ {" + text.toUpperCase() +"} ~~~~ @ #";});
         poemBeautifier.beautify("I like This Task", String::toLowerCase);
-        poemBeautifier.beautify("Si vis pacem, para bellum", ExtraCharsForMakeBeautyfier::beauteText2);
+        poemBeautifier.beautify("Si vis pacem, para bellum", (text)->{return "#" + "@" + text + "#" + "@";});
 
     }
 }
