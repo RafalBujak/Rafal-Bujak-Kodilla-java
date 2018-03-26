@@ -1,5 +1,7 @@
 package com.kodilla.stream.immutable;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 public final class ForumUser {
     private final String userName;
     private final String realName;
@@ -16,4 +18,5 @@ public final class ForumUser {
     public String getRealName() {
         return realName;
     }
+
 }
