@@ -11,7 +11,7 @@ public final class ForumUser {
 
     ForumUser(final int userId, final String userName, final int yearOfBirth,
               final int monthOfBirth, final int dayOfBirth,
-              final int numbersOfPosts, final char sex){
+              final int numbersOfPosts, final char sex) {
         this.userId = userId;
         this.userName = userName;
         this.dateOfBirth = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
