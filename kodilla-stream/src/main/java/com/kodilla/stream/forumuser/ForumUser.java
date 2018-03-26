@@ -39,13 +39,6 @@ public final class ForumUser {
         return numbersOfPosts;
     }
 
-    public boolean check(){
-        char man ='M';
-        if (man == 'M') {
-            return true;
-        }
-        return false;
-    }
     @Override
     public String toString() {
         return "ForumUser{" +

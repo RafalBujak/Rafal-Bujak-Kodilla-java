@@ -23,14 +23,14 @@ public class StreamMain {
 
      Forum theForumList = new Forum();
 
-     Map<String, ForumUser> theResultMapOfFprumUser = theForumList.getUserList().stream()
-             .filter(forumUser -> forumUser.getSex()) == 'M')
+     Map<Integer, ForumUser> theResultMapOfForumUser = theForumList.getUserList().stream()
+             .filter(forumUser -> forumUser.getSex() == 'M')
              .filter(forumUser -> forumUser.getDateOfBirth().isBefore(dateOfBirthLimit))
              .filter(forumUser -> forumUser.getNumbersOfPosts() > 1)
-             .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser))
+             .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser));
 
-        System.out.println("# elements: " + theResultMapOfFprumUser.size());
-        theResultMapOfFprumUser.entrySet().stream()
+        System.out.println("# elements: " + theResultMapOfForumUser.size());
+        theResultMapOfForumUser.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
 

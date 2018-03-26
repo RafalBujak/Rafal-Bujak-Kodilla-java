@@ -15,7 +15,7 @@ public class Forum {
                 1985, 04, 14,
                 10, 'M'));
         theListForumUser.add(new ForumUser(3,"mouse",
-                1995, 9, 31,
+                1995, 9, 30,
                 15, 'F'));
         theListForumUser.add(new ForumUser(4,"dengerCat",
                 1975, 12, 8,
