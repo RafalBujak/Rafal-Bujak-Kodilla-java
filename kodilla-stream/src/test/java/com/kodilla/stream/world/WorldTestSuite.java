@@ -9,38 +9,38 @@ public class WorldTestSuite {
     public void testWorldPeopleQuantity() {
 
         //Given
-        Country Poland = new Country("Poland", new BigDecimal("40000000"));
-        Country Germany = new Country("Germany", new BigDecimal("80000000"));
+        Country poland = new Country("Poland", new BigDecimal("40000000"));
+        Country germany = new Country("Germany", new BigDecimal("80000000"));
         Country UK = new Country("UK", new BigDecimal("60000000"));
         Country USA = new Country("USA", new BigDecimal("90000000"));
-        Country Mexico = new Country("Mexico", new BigDecimal("75000000"));
-        Country Russia = new Country("Russia", new BigDecimal("125000000"));
-        Country China = new Country("China", new BigDecimal("140000000"));
-        Country Egypt = new Country("Egypt", new BigDecimal("56000000"));
-        Country Canada = new Country("Canada", new BigDecimal("48000000"));
+        Country mexico = new Country("Mexico", new BigDecimal("75000000"));
+        Country russia = new Country("Russia", new BigDecimal("125000000"));
+        Country china = new Country("China", new BigDecimal("140000000"));
+        Country egypt = new Country("Egypt", new BigDecimal("56000000"));
+        Country canada = new Country("Canada", new BigDecimal("48000000"));
 
 
-        Continent Europe = new Continent();
-        Continent NorthAmerica = new Continent();
-        Continent Asia = new Continent();
-        Continent Africa = new Continent();
+        Continent europe = new Continent();
+        Continent northAmerica = new Continent();
+        Continent asia = new Continent();
+        Continent africa = new Continent();
 
         //When
-        Europe.addCountry(Poland);
-        Europe.addCountry(Germany);
-        Europe.addCountry(UK);
-        NorthAmerica.addCountry(USA);
-        NorthAmerica.addCountry(Mexico);
-        Asia.addCountry(Russia);
-        Asia.addCountry(China);
-        Africa.addCountry(Egypt);
-        Africa.addCountry(Canada);
+        europe.addCountry(poland);
+        europe.addCountry(germany);
+        europe.addCountry(UK);
+        northAmerica.addCountry(USA);
+        northAmerica.addCountry(mexico);
+        asia.addCountry(russia);
+        asia.addCountry(china);
+        africa.addCountry(egypt);
+        africa.addCountry(canada);
 
         World World = new World();
-        World.addContinent(Europe);
-        World.addContinent(Asia);
-        World.addContinent(NorthAmerica);
-        World.addContinent(Africa);
+        World.addContinent(europe);
+        World.addContinent(asia);
+        World.addContinent(northAmerica);
+        World.addContinent(africa);
 
         BigDecimal calculatedTotalPeople = World.getPeopleQuantity();
 
