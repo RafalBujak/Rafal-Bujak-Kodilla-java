@@ -11,20 +11,20 @@ public final class ArrayUsingIntStream implements ArrayOperations {
         this.numbers = numbers;
     }
 
-    public int[] getNumbers() { return numbers;}
+    public int[] getNumbers() {
+        return numbers;
+    }
 
     @Override
     public double getAverage(int[] numbers) {
-        if(numbers.length == 0){
-            return 0.0;
-        }
+
         double averageGetFromIntStream;
         IntStream.range(0, numbers.length)
                 .map(index -> numbers[index])
                 .forEach(System.out::println);
         averageGetFromIntStream = IntStream.range(0, numbers.length)
                 .map(index -> numbers[index])
-                .average().getAsDouble();
+                .average().orElse(0);
         return averageGetFromIntStream;
     }
 }
