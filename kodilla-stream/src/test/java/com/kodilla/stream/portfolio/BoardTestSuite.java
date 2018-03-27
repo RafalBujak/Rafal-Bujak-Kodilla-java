@@ -3,7 +3,12 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.sql.Time;
+import java.time.MonthDay;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 import java.time.LocalDate;
+import java.util.stream.Collectors;
 
 public class BoardTestSuite {
     public Board prepareTestData(){
@@ -78,5 +83,76 @@ public class BoardTestSuite {
 
         //Then
         Assert.assertEquals(3, project.getTaskLists().size());
+    }
+
+    @Test
+    public void testAddTaskListFindUsersTask(){
+        //Given
+        Board project =prepareTestData();
+        //When
+        User user = new User("developer1", "John Smith");
+        List<Task> tasks = project.getTaskLists().stream()
+                .flatMap(l -> l.getTasks().stream())
+                .filter(t -> t.getAssignedUser().equals(user))
+                .collect(Collectors.toList());
+        //Then
+        Assert.assertEquals(2, tasks.size());
+        Assert.assertEquals(user, tasks.get(0).getAssignedUser());
+        Assert.assertEquals(user, tasks.get(1).getAssignedUser());
+    }
+
+    @Test
+    public void testAddTaskListFindOutdatedTasks(){
+        //Given
+        Board project = prepareTestData();
+        //When
+        List<TaskList> undoneTasks = new ArrayList<>();
+        undoneTasks.add(new TaskList("To do"));
+        undoneTasks.add(new TaskList("In progress"));
+        List<Task> tasks = project.getTaskLists().stream()
+                .filter(undoneTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .filter(t -> t.getDeadLine().isBefore(LocalDate.now()))
+                .collect(Collectors.toList());
+
+        //Then
+        Assert.assertEquals(1, tasks.size());
+        Assert.assertEquals("HGLs for analysis", tasks.get(0).getTitle());
+    }
+
+    @Test
+    public void testAddTaskListFindLongTasks() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        long longTasks = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> t.getCreated())
+                .filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <= 0)
+                .count();
+
+        //Then
+        Assert.assertEquals(2, longTasks);
+    }
+
+    @Test
+   public void testAddTaskListAverageWorkingOnTask(){
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> averageDaysInProgress = new ArrayList<>();
+        averageDaysInProgress.add(new TaskList("In Progress"));
+        double averageNumbersOfDays = project.getTaskLists().stream()
+                .filter(averageDaysInProgress::contains)
+                .flatMap(i -> i.getTasks().stream())
+                .mapToDouble(m -> m.getCreated().until(m.getDeadLine(), ChronoUnit.DAYS))
+                .average().orElse(0);
+
+        //Then
+        Assert.assertEquals(18.33, averageNumbersOfDays, 0.01);
     }
 }
