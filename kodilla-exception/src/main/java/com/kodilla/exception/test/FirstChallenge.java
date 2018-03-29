@@ -1,7 +1,5 @@
 package com.kodilla.exception.test;
 
-import java.io.IOException;
-
 public class FirstChallenge {
 
     public double divide(int a, int b) {
