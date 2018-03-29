@@ -2,21 +2,12 @@ package com.kodilla.exception.test;
 
 public class FirstChallenge {
 
-    public double divide(int a, int b) {
 
-        double resultOfDividing = 0;
-        try {
-            if (b == 0) {
-                // DO nothing and go to block catch, else divide a / b
-            }
-            resultOfDividing = a / b;
-            return resultOfDividing;
-        } catch (ArithmeticException e) {
-            System.out.println("You cant divide by 0 " + e);
-        } finally {
-            System.out.println("I try divide: " + a + " / " + b);
+    public double divide(double a, double b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException();
         }
-        return resultOfDividing;
+        return a / b;
     }
 
     /*
@@ -25,7 +16,16 @@ public class FirstChallenge {
      */
     public static void main(String[] args) {
         FirstChallenge firstChallenge = new FirstChallenge();
-        double result = firstChallenge.divide(3, 0);
-        System.out.println(result);
+
+        try {
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
+        } catch (Exception e) {
+            System.out.println("Sorry we cant divide by 0 = " + e);
+        } finally {
+            System.out.println("Is done!");
+        }
+
+
     }
 }
