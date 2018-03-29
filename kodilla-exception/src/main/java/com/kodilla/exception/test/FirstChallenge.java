@@ -4,18 +4,21 @@ import java.io.IOException;
 
 public class FirstChallenge {
 
-    public double divide(double a, double b) {
+    public double divide(int a, int b) {
 
-        double divideReturn = 0;
+        double resultOfDividing = 0;
         try {
-            divideReturn = a / b;
-            return divideReturn;
+            if (b == 0) {
+                // DO nothing and go to block catch, else divide a / b
+            }
+            resultOfDividing = a / b;
+            return resultOfDividing;
         } catch (ArithmeticException e) {
-            System.out.println("You cant divide by 0" + e);
+            System.out.println("You cant divide by 0 " + e);
         } finally {
             System.out.println("I try divide: " + a + " / " + b);
         }
-        return divideReturn;
+        return resultOfDividing;
     }
 
     /*
