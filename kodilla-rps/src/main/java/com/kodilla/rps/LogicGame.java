@@ -8,32 +8,18 @@ public class LogicGame {
     private int scorePlayer = 0;
     private int scoreComp = 0;
 
+    String rock = "1";
+    String stone = "3";
+    String paper = "2";
+    Random random = new Random();
+    int comp = random.nextInt(3 - 1) + 1;
+
     public boolean logicOfGame() {
         Scanner sc = new Scanner(System.in);
         String userInput = sc.nextLine();
-        Random random = new Random();
-        int comp = random.nextInt(3 - 1) + 1;
-        String rock = "1";
-        String stone = "3";
-        String paper = "2";
-        if (userInput.equals(rock) && comp == 3) {
-            System.out.println("the computer has chosen Scissors. you win!!");
-            scorePlayer++;
-        } else if (userInput.equals(rock) && comp == 2) {
-            System.out.println("the computer has chosen Paper. you lost!!");
-            scoreComp++;
-        } else if (userInput.equals(paper) && comp == 1) {
-            System.out.println("the computer has chosen Stone. you win!!");
-            scorePlayer++;
-        } else if (userInput.equals(paper) && comp == 3) {
-            System.out.println("the computer has chosen Scissors. you lost!!");
-            scoreComp++;
-        } else if (userInput.equals(stone) && comp == 1) {
-            System.out.println("the computer has chosen Stone. you lost!!");
-            scoreComp++;
-        } else if (userInput.equals(stone) && comp == 2) {
-            System.out.println("the computer has chosen paper. you win!!");
-            scorePlayer++;
+
+        if (userInput.equals(userInput)) {
+            randomMethod(userInput);
         } else if (userInput.equals("x")) {
             System.out.println("Are you sure you want to end the game? press key T for yes  or N for No");
             choice();
@@ -77,6 +63,41 @@ public class LogicGame {
             System.exit(0);
         }
         return true;
+    }
+
+    public void randomMethod(String digit) {
+        switch (digit) {
+            case "1": {
+                if (digit.equals(rock) && comp == 3) {
+                    System.out.println("the computer has chosen Scissors. you win!!");
+                    scorePlayer++;
+                } else if (digit.equals(rock) && comp == 2) {
+                    System.out.println("the computer has chosen Paper. you lost!!");
+                    scoreComp++;
+                }
+            }
+
+            case "2": {
+                if (digit.equals(paper) && comp == 1) {
+                    System.out.println("the computer has chosen Stone. you win!!");
+                    scorePlayer++;
+                } else if (digit.equals(paper) && comp == 3) {
+                    System.out.println("the computer has chosen Scissors. you lost!!");
+                    scoreComp++;
+                }
+            }
+
+            case "3": {
+                if (digit.equals(stone) && comp == 1) {
+                    System.out.println("the computer has chosen Stone. you lost!!");
+                    scoreComp++;
+                } else if (digit.equals(stone) && comp == 2) {
+                    System.out.println("the computer has chosen paper. you win!!");
+                    scorePlayer++;
+                }
+
+            }
+        }
     }
 }
 
