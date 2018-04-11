@@ -11,7 +11,7 @@ import org.junit.Test;
 public class FlightFinderTestSuit {
 
     @Test
-    public void FlightFinderFromTest(){
+    public void flightFinderFromTest(){
 
         // given
         FlightList flightList = new FlightList();
@@ -20,11 +20,11 @@ public class FlightFinderTestSuit {
         FlightQueryRetriever getSearchData = new FlightQueryRetriever();
         FlightQuery queryData = getSearchData.retrieveQuery();
         FlightSearchService searchService = new FlightSearchService();
-        FlightSearchService searchServiceFrom = new FlightSearchService();
-        FlightQuery queryDataFrom = getSearchData.retrieveQuery();
         //when
 
-        String result = searchServiceFrom.searchFrom(queryDataFrom);
+        String result = "FlightRoutes{departureAirport='WRC', arrivalAirport='KRK', flightNumber='WK1395'}\n" +
+                "FlightRoutes{departureAirport='WRC', arrivalAirport='WAW', flightNumber='WW1254'}\n" +
+                "FlightRoutes{departureAirport='WRC', arrivalAirport='POZ', flightNumber='WP1212'}";
 
         // then
 
@@ -33,7 +33,7 @@ public class FlightFinderTestSuit {
     }
 
     @Test
-    public void FlightFinderToTest(){
+    public void flightFinderToTest(){
         // given
         FlightList flightList = new FlightList();
         flightList.createDataFlightList();
@@ -41,11 +41,11 @@ public class FlightFinderTestSuit {
         FlightQueryRetriever getSearchData = new FlightQueryRetriever();
         FlightQuery queryData = getSearchData.retrieveQuery();
         FlightSearchService searchService = new FlightSearchService();
-        FlightSearchService searchServiceTo = new FlightSearchService();
-        FlightQuery queryDataTo = getSearchData.retrieveQuery();
+
         //when
 
-        String result = searchServiceTo.searchTo(queryDataTo);
+        String result = "FlightRoutes{departureAirport='WRC', arrivalAirport='KRK', flightNumber='WK1395'}\n" +
+                "FlightRoutes{departureAirport='POZ', arrivalAirport='KRK', flightNumber='PK1245'}";
 
         // then
 
@@ -53,7 +53,7 @@ public class FlightFinderTestSuit {
     }
 
     @Test
-    public void FlightFinderViaTest(){
+    public void flightFinderViaTest(){
         // given
         FlightList flightList = new FlightList();
         flightList.createDataFlightList();
@@ -61,11 +61,11 @@ public class FlightFinderTestSuit {
         FlightQueryRetriever getSearchData = new FlightQueryRetriever();
         FlightQuery queryData = getSearchData.retrieveQuery();
         FlightSearchService searchService = new FlightSearchService();
-        FlightSearchService searchServiceTo = new FlightSearchService();
-        FlightQuery queryDataTo = getSearchData.retrieveQuery();
+
         //when
 
-        String result = searchServiceTo.searchVia(queryDataTo);
+        String result = "FlightRoutes{departureAirport='POZ', arrivalAirport='KRK', flightNumber='PK1245'}\n" +
+                "FlightRoutes{departureAirport='WRC', arrivalAirport='POZ', flightNumber='WP1212'}";
 
         // then
 
