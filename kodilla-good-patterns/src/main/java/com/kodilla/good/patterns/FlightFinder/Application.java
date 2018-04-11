@@ -6,16 +6,17 @@ public class Application {
         FlightQueryRetriever getSearchData = new FlightQueryRetriever();
         FlightQuery queryData = getSearchData.retrieveQuery();
 
-        FlightSearchServiceFrom newSearchFrom = new FlightSearchServiceFrom();
-        String respondFrom = newSearchFrom.search(queryData);
+        FlightSearchService newSearch = new FlightSearchService();
+
+        String respondFrom = newSearch.searchFrom(queryData);
         System.out.println(respondFrom + "\n");
 
-        FlightSearchServiceTo  newSearchTo = new FlightSearchServiceTo();
-        String respondTo = newSearchTo.search(queryData);
+
+        String respondTo = newSearch.searchTo(queryData);
         System.out.println(respondTo + "\n");
 
-        FlightSearchServiceVia newSearchVia = new FlightSearchServiceVia();
-        String respondVia = newSearchVia.search(queryData);
+
+        String respondVia = newSearch.searchVia(queryData);
         System.out.println(respondVia);
 
     }

@@ -5,7 +5,7 @@ import java.util.HashSet;
 public class FlightList {
     private static FlightList list;
 
-    private FlightList() {
+    public FlightList() {
     }
 
     public static FlightList getInstance() {
