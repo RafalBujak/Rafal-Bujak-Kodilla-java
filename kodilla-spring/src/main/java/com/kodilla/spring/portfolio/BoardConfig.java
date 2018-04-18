@@ -1,5 +1,7 @@
 package com.kodilla.spring.portfolio;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -27,5 +29,14 @@ public class BoardConfig {
     @Bean
     public Board createBoard() {
         return new Board(createToDoList(), createInProgressList(), createDoneList());
+    }
+
+    @Bean
+    public Board iniOfBoard() {
+        Board board = new Board(createToDoList(), createInProgressList(), createDoneList());
+        board.getToDoList().addTask("Go to store");
+        board.getInProgressList().addTask("Do new task from the course");
+        board.getDoneList().addTask("Change water in Aquarium");
+        return board;
     }
 }
