@@ -32,7 +32,7 @@ public class BoardConfig {
     }
 
     @Bean
-    public Board iniOfBoard() {
+    public Board initializationOfBoard() {
         Board board = new Board(createToDoList(), createInProgressList(), createDoneList());
         board.getToDoList().addTask("Go to store");
         board.getInProgressList().addTask("Do new task from the course");

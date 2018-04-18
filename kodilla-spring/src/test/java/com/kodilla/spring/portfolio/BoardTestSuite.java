@@ -12,7 +12,7 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(BoardConfig.class);
-        Board board = (Board) context.getBean("iniOfBoard");
+        Board board = (Board) context.getBean("initializationOfBoard");
         //When
         String toDoTask = board.getToDoList().getTask(0);
         String inProgressTask = board.getInProgressList().getTask(0);
