@@ -5,12 +5,17 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(name = "Company.retrieveCompanyNameLike",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME , '%')"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
     private int id;
     private String name;
     private List<Employee> employees = new ArrayList<>();
+
     public Company() {
     }
 
