@@ -72,10 +72,12 @@ public class CompanyDaoTestSuite {
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaSmith = new Employee("Linda", "Smith");
+        Employee employee = new Employee();
 
         Company softwareMachine = new Company("Software Machine");
         Company softDataMasters = new Company("Soft Data Masters");
         Company greyMatter = new Company("Grey Matter");
+        Company company = new Company();
 
         softwareMachine.getEmployees().add(johnSmith);
         softDataMasters.getEmployees().add(stephanieClarckson);
@@ -98,7 +100,7 @@ public class CompanyDaoTestSuite {
         List<Company> nameStartedWith = companyDao.retrieveCompanyNameLike("Sof");
 
         //Then
-        Assert.assertEquals(2, lastName.size());
+        Assert.assertEquals("Smith", lastName.iterator().next().getLastname());
         Assert.assertEquals(2, nameStartedWith.size());
 
         // clean up
