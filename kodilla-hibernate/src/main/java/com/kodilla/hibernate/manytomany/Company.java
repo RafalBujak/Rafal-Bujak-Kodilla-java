@@ -1,12 +1,15 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(name = "Company.retrieveCompanyNameLike",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME , '%')"
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME , '%')",
+        resultClass = Company.class
 )
 
 @Entity
@@ -37,7 +40,7 @@ public class Company {
         return name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL,  mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

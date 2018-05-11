@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -22,8 +23,8 @@ public class InvoiceDaoTestSuite {
     public void testInvoiceDaoSave() {
         //GIVEN
         Product apple = new Product("apple");
-        Item item1 = new Item(new BigDecimal(230), 200, new BigDecimal(46000));
-        Item item2 = new Item(new BigDecimal(230), 100, new BigDecimal(23000));
+        Item item1 = new Item(new BigDecimal(230.00), 200, new BigDecimal(46000));
+        Item item2 = new Item(new BigDecimal(230.00), 100, new BigDecimal(23000));
         Invoice invoice = new Invoice("123");
         apple.getItems().add(item1);
         apple.getItems().add(item2);
@@ -36,11 +37,15 @@ public class InvoiceDaoTestSuite {
 
         //WHEN
         invoiceDao.save(invoice);
-        int id = invoice.getId();
+        Invoice vInvoice = invoiceDao.findOne(invoice.getId());
+        List<Item> item = vInvoice.getItems();
+        System.out.println(item.iterator().next().getProduct().getItems());
+
         //THEN
-        Assert.assertEquals(4, id);
+        Assert.assertEquals("apple",  item.iterator().next().getProduct().getName());
+        Assert.assertEquals(200, item.iterator().next().getQuantity());
         //CLEAN UP
-        invoiceDao.delete(id);
+        invoiceDao.delete(invoice);
     }
 
 }

@@ -72,12 +72,12 @@ public class CompanyDaoTestSuite {
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaSmith = new Employee("Linda", "Smith");
-        Employee employee = new Employee();
+
 
         Company softwareMachine = new Company("Software Machine");
         Company softDataMasters = new Company("Soft Data Masters");
         Company greyMatter = new Company("Grey Matter");
-        Company company = new Company();
+
 
         softwareMachine.getEmployees().add(johnSmith);
         softDataMasters.getEmployees().add(stephanieClarckson);
@@ -101,15 +101,12 @@ public class CompanyDaoTestSuite {
 
         //Then
         Assert.assertEquals("Smith", lastName.iterator().next().getLastname());
-        Assert.assertEquals(2, nameStartedWith.size());
+        Assert.assertEquals("Software Machine", nameStartedWith.iterator().next().getName());
 
         // clean up
-        try {
-            companyDao.delete(softwareMachine);
-            companyDao.delete(softDataMasters);
-            companyDao.delete(greyMatter);
-        } catch (Exception e) {
-            //do nothing
-        }
+
+            //companyDao.deleteAll();
+            //employeeDao.deleteAll();
+
     }
 }
