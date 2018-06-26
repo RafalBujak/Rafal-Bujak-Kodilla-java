@@ -21,6 +21,7 @@ public class Statistics implements BookStatistics {
         int n = 0;
         for(Map.Entry<BookSignature, Book> entry : books.entrySet()) {
             years[n] = entry.getValue().getYearOfPublication();
+            n++;
         }
         Arrays.sort(years);
         if(years.length % 2 == 0) {
