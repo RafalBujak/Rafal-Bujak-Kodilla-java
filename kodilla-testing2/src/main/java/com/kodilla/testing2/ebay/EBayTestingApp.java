@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class EBayTestingApp {
     public static final String SEARCHFIELDEBAY = "gh-ac";
     public static void main (String[] args) {
-        WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
+        WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driver.get("https://www.ebay.de");
 
         WebElement searchField = driver.findElement(By.id(SEARCHFIELDEBAY));
